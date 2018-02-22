@@ -1,0 +1,17 @@
+{
+  "name": "YaopengLiu2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemailer": "^4.6.0",
+    "pg": "^7.4.1"
+  }
+}
