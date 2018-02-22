@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 
 /*-------------------  File Get Part --------------------*/
-const ClientFileDirectory =  __dirname + '\\client\\login';
+const ClientFileDirectory =  __dirname + '/client/login';
 app.get('/', function(request, response, next){
 	var options = {
     	root: ClientFileDirectory,
