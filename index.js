@@ -31,7 +31,7 @@ app.get('/', function(request, response, next){
 
 app.get('/static/css/:name', function(request, response, next){
 	var options = {
-    	root: ClientFileDirectory + "\\static\\css",
+    	root: ClientFileDirectory + "/static/css",
     	headers: { 'Content-Type': 'text/css' }
   	};
 	response.sendFile(request.params.name, options, function (error) {
@@ -41,7 +41,7 @@ app.get('/static/css/:name', function(request, response, next){
 
 app.get('/static/js/:name', function(request, response, next){
 	var options = {
-    	root: ClientFileDirectory + "\\static\\js",
+    	root: ClientFileDirectory + "/static/js",
     	headers: { 'Content-Type': 'application/x-javascript' }
   	};
 	response.sendFile(request.params.name, options, function (error) {
