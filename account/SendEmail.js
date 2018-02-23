@@ -23,18 +23,18 @@ var SendEmail= function(email, timeout){
             pass: process.env.EMAIL_PIN 
         }
     });
-	
+	console.log(process.env.EMAIL_USER, process.env.EMAIL_PIN);
 	var mailOptions = {
 		from: 'Kanzaki Yui', 
-        to: email, 
-        subject: 'Email Validation Message', 
+        	to: email, 
+        	subject: 'Email Validation Message', 
 		html: '<p>Hello! The below is your <strong>Validation Code</strong></p><br>'+
 		'<p><strong>'+code+"</strong></p><br><p>Please use it to verify your email...</p>"
-    };
+    	};
 	
 	transporter.sendMail(mailOptions, (error, info) => {
-        if (error) return console.log(error);   
-    });
+        	if (error) return console.log(error);   
+    	});
 	
 	var checkQuery = `SELECT email FROM public.emailcode where email = '${email}';`;
 	PostgreSQL.PSQLSeach(checkQuery, function(error, queryResult){
