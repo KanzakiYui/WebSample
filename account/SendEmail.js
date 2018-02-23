@@ -15,15 +15,14 @@ function randomString(n){
 var SendEmail= function(email, timeout){
 	var code = randomString(10);
 	var transporter = NodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false, 					// true for 465, false for other ports
-        auth: {
-            user: process.env.EMAIL_USER, 
-            pass: process.env.EMAIL_PIN 
-        }
-    });
-	console.log(process.env.EMAIL_USER, process.env.EMAIL_PIN);
+        	host: 'smtp.gmail.com',
+        	port: 587,
+        	secure: false, 					// true for 465, false for other ports
+        	auth: {
+            		user: process.env.EMAIL_USER, 
+            		pass: process.env.EMAIL_PIN 
+        	}
+    	});
 	var mailOptions = {
 		from: 'Kanzaki Yui', 
         	to: email, 
