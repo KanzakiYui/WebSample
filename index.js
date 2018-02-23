@@ -49,6 +49,20 @@ app.get('/static/js/:name', function(request, response, next){
   	});
 });
 
+app.get('/static/media/:name', function(request, response, next){
+	var filename = request.params.name;
+	var filetype= filename.split(".").pop();
+	if(filetype==="jpg") filetype="image/jpeg";
+	else if(filetype==="png") filetype="image/png";
+	var options = {
+    	root: ClientFileDirectory + "/static/media",
+    	headers: { 'Content-Type': filetype }
+  	};
+	response.sendFile(request.params.name, options, function (error) {
+		 if (error) next(error)
+  	});
+});
+
 app.get('/userHomePage', function(request, response, next){
 	response.send("To be continued...");
 });
